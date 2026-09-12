@@ -1,0 +1,308 @@
+{
+  "project": "camera-nine",
+  "styleId": "wet-cel-noir",
+  "generator": "GPT Image 2 via Codex built-in image generation",
+  "assets": [
+    {
+      "id": "char.su-wan.identity",
+      "kind": "character-master",
+      "status": "production-master",
+      "path": "masters/su-wan_identity_master_v01.png",
+      "promptSet": "prompts/001-foundation-masters.md"
+    },
+    {
+      "id": "char.su-wan.front",
+      "kind": "character-continuity",
+      "status": "production-master",
+      "path": "masters/su-wan/su-wan_full-front_master_v01.png",
+      "promptSet": "prompts/002-su-wan-continuity.md"
+    },
+    {
+      "id": "char.su-wan.profile-left",
+      "kind": "character-continuity",
+      "status": "production-master",
+      "path": "masters/su-wan/su-wan_full-profile-left_master_v01.png",
+      "promptSet": "prompts/002-su-wan-continuity.md"
+    },
+    {
+      "id": "char.su-wan.back",
+      "kind": "character-continuity",
+      "status": "production-master",
+      "path": "masters/su-wan/su-wan_full-back_master_v01.png",
+      "promptSet": "prompts/002-su-wan-continuity.md"
+    },
+    {
+      "id": "env.baijiao-hotel.exterior",
+      "kind": "environment-master",
+      "status": "production-master",
+      "path": "masters/baijiao-hotel_exterior_master_v01.png",
+      "promptSet": "prompts/001-foundation-masters.md"
+    },
+    {
+      "id": "env.ballroom.empty",
+      "kind": "environment-master",
+      "status": "production-master",
+      "path": "masters/banquet-hall_empty_master_v01.png",
+      "promptSet": "prompts/001-foundation-masters.md"
+    },
+    {
+      "id": "env.service-corridor.normal",
+      "kind": "environment-state",
+      "status": "production-master",
+      "path": "scenes/opening/service-corridor_normal_master_v01.png",
+      "promptSet": "prompts/003-opening-corridor.md"
+    },
+    {
+      "id": "env.service-corridor.blackout",
+      "kind": "environment-state",
+      "status": "production-master",
+      "path": "scenes/opening/service-corridor_blackout_master_v01.png",
+      "promptSet": "prompts/003-opening-corridor.md"
+    },
+    {
+      "id": "shot.opening.su-wan-glass-warning",
+      "kind": "narrative-keyframe",
+      "status": "production-master",
+      "path": "scenes/opening/su-wan_glass-warning_keyframe_v01.png",
+      "promptSet": "prompts/003-opening-corridor.md"
+    },
+    {
+      "id": "env.ballroom.guests-arriving",
+      "kind": "environment-state",
+      "status": "production-master",
+      "path": "scenes/ballroom/ballroom_guests-arriving_master_v01.png",
+      "promptSet": "prompts/004-ballroom-states.md"
+    },
+    {
+      "id": "shot.ballroom.ceremony-2343",
+      "kind": "narrative-keyframe",
+      "status": "production-master",
+      "path": "scenes/ballroom/ballroom_ceremony-2343_master_v01.png",
+      "promptSet": "prompts/004-ballroom-states.md"
+    },
+    {
+      "id": "shot.ballroom.anomaly-2347",
+      "kind": "narrative-keyframe",
+      "status": "production-master",
+      "path": "scenes/ballroom/ballroom_anomaly-2347_master_v01.png",
+      "promptSet": "prompts/004-ballroom-states.md"
+    },
+    {
+      "id": "sequence.ballroom.arrival-to-anomaly",
+      "kind": "triptych-preview",
+      "status": "production-preview",
+      "path": "scenes/ballroom/ballroom_sequence_triptych_v01.png",
+      "promptSet": "prompts/004-ballroom-states.md"
+    },
+    {
+      "id": "char.su-mi.identity",
+      "kind": "character-master",
+      "status": "production-master",
+      "path": "masters/cast/su-mi_identity_master_v01.png",
+      "promptSet": "prompts/005-core-cast.md"
+    },
+    {
+      "id": "char.zhou-chen.identity",
+      "kind": "character-master",
+      "status": "production-master",
+      "path": "masters/cast/zhou-chen_identity_master_v01.png",
+      "promptSet": "prompts/005-core-cast.md"
+    },
+    {
+      "id": "char.lu-ye.identity",
+      "kind": "character-master",
+      "status": "production-master",
+      "path": "masters/cast/lu-ye_identity_master_v01.png",
+      "promptSet": "prompts/005-core-cast.md"
+    },
+    {
+      "id": "camera.04.bridal-suite-2342",
+      "kind": "camera-feed-master",
+      "status": "production-master",
+      "path": "cameras/cam-04_bridal-suite_2342_master_v01.png",
+      "promptSet": "prompts/006-camera-system.md"
+    },
+    {
+      "id": "camera.05.kitchen-loading-2342",
+      "kind": "camera-feed-master",
+      "status": "production-master",
+      "path": "cameras/cam-05_kitchen-loading_2342_master_v01.png",
+      "promptSet": "prompts/006-camera-system.md"
+    },
+    {
+      "id": "camera.06.west-stair-2342",
+      "kind": "camera-feed-master",
+      "status": "production-master",
+      "path": "cameras/cam-06_west-stair_2342_master_v01.png",
+      "promptSet": "prompts/006-camera-system.md"
+    },
+    {
+      "id": "camera.07.cliff-terrace-2342",
+      "kind": "camera-feed-master",
+      "status": "production-master",
+      "path": "cameras/cam-07_cliff-terrace_2342_master_v01.png",
+      "promptSet": "prompts/006-camera-system.md"
+    },
+    {
+      "id": "camera.08.lu-ye-mobile-234538",
+      "kind": "camera-feed-master",
+      "status": "production-master",
+      "path": "cameras/cam-08_lu-ye-mobile_234538_master_v01.png",
+      "promptSet": "prompts/006-camera-system.md"
+    },
+    {
+      "id": "camera.09.past-vote-12y",
+      "kind": "camera-feed-master",
+      "status": "production-master",
+      "path": "cameras/cam-09_past-vote_12y_master_v01.png",
+      "promptSet": "prompts/006-camera-system.md"
+    },
+    {
+      "id": "camera.04.bridal-suite-234701-event",
+      "kind": "camera-feed-event-state",
+      "status": "production-master",
+      "path": "cameras/cam-04_bridal-suite_234701_event_v01.png",
+      "promptSet": "prompts/007-camera-system-2347-event.md"
+    },
+    {
+      "id": "camera.05.kitchen-loading-234702-event",
+      "kind": "camera-feed-event-state",
+      "status": "production-master",
+      "path": "cameras/cam-05_kitchen-loading_234702_event_v01.png",
+      "promptSet": "prompts/007-camera-system-2347-event.md"
+    },
+    {
+      "id": "camera.06.west-stair-234701-event",
+      "kind": "camera-feed-event-state",
+      "status": "production-master",
+      "path": "cameras/cam-06_west-stair_234701_event_v01.png",
+      "promptSet": "prompts/007-camera-system-2347-event.md"
+    },
+    {
+      "id": "camera.07.cliff-terrace-234700-event",
+      "kind": "camera-feed-event-state",
+      "status": "production-master",
+      "path": "cameras/cam-07_cliff-terrace_234700_event_v01.png",
+      "promptSet": "prompts/007-camera-system-2347-event.md"
+    },
+    {
+      "id": "camera.08.lu-ye-mobile-234659-event",
+      "kind": "camera-feed-event-state",
+      "status": "production-master",
+      "path": "cameras/cam-08_lu-ye-mobile_234659_event_v01.png",
+      "promptSet": "prompts/007-camera-system-2347-event.md"
+    },
+    {
+      "id": "camera.system.contact-sheet",
+      "kind": "camera-system-preview",
+      "status": "production-preview",
+      "path": "cameras/camera-system_contact-sheet_v01.png",
+      "promptSet": "prompts/006-camera-system.md"
+    },
+    {
+      "id": "camera.system.2347-contact-sheet",
+      "kind": "camera-system-event-preview",
+      "status": "production-preview",
+      "path": "cameras/camera-system_2347-contact-sheet_v01.png",
+      "promptSet": "prompts/007-camera-system-2347-event.md"
+    },
+    {
+      "id": "ui.primary-play-interface.concept",
+      "kind": "ui-concept",
+      "status": "production-reference",
+      "path": "ui/primary-play-interface_concept_v01.png",
+      "promptSet": "prompts/008-primary-interface-concept.md"
+    },
+    {
+      "id": "evidence.props.contact-sheet",
+      "kind": "evidence-prop-master",
+      "status": "production-master",
+      "path": "evidence/evidence-props_contact-sheet_v01.png",
+      "promptSet": "prompts/010-evidence-props.md"
+    },
+    {
+      "id": "evidence.card-in-hand",
+      "kind": "runtime-evidence-prop",
+      "status": "production-runtime",
+      "path": "runtime/evidence/card-in-hand.webp",
+      "promptSet": "prompts/010-evidence-props.md"
+    },
+    {
+      "id": "evidence.duplicate-card",
+      "kind": "runtime-evidence-prop",
+      "status": "production-runtime",
+      "path": "runtime/evidence/duplicate-card.webp",
+      "promptSet": "prompts/010-evidence-props.md"
+    },
+    {
+      "id": "evidence.mirror-door",
+      "kind": "runtime-evidence-prop",
+      "status": "production-runtime",
+      "path": "runtime/evidence/mirror-door.webp",
+      "promptSet": "prompts/010-evidence-props.md"
+    },
+    {
+      "id": "evidence.missing-case",
+      "kind": "runtime-evidence-prop",
+      "status": "production-runtime",
+      "path": "runtime/evidence/missing-case.webp",
+      "promptSet": "prompts/010-evidence-props.md"
+    },
+    {
+      "id": "evidence.footprint-gap",
+      "kind": "runtime-evidence-prop",
+      "status": "production-runtime",
+      "path": "runtime/evidence/footprint-gap.webp",
+      "promptSet": "prompts/010-evidence-props.md"
+    },
+    {
+      "id": "sequence.su-wan-horror.contact-sheet",
+      "kind": "cinematic-sequence-master",
+      "status": "production-master",
+      "path": "su-wan-horror-sequence_contact-sheet_v01.png",
+      "promptSet": "prompts/011-su-wan-horror-sequence.md"
+    },
+    {
+      "id": "sequence.su-wan-horror.distant",
+      "kind": "runtime-cinematic-frame",
+      "status": "production-runtime",
+      "path": "runtime/sequences/su-wan-distant.webp",
+      "promptSet": "prompts/011-su-wan-horror-sequence.md"
+    },
+    {
+      "id": "sequence.su-wan-horror.approach",
+      "kind": "runtime-cinematic-frame",
+      "status": "production-runtime",
+      "path": "runtime/sequences/su-wan-approach.webp",
+      "promptSet": "prompts/011-su-wan-horror-sequence.md"
+    },
+    {
+      "id": "sequence.su-wan-horror.glass",
+      "kind": "runtime-cinematic-frame",
+      "status": "production-runtime",
+      "path": "runtime/sequences/su-wan-glass.webp",
+      "promptSet": "prompts/011-su-wan-horror-sequence.md"
+    },
+    {
+      "id": "sequence.su-wan-horror.blackout",
+      "kind": "runtime-cinematic-frame",
+      "status": "production-runtime",
+      "path": "runtime/sequences/su-wan-blackout.webp",
+      "promptSet": "prompts/011-su-wan-horror-sequence.md"
+    },
+    {
+      "id": "sequence.su-wan-horror.jumpscare",
+      "kind": "runtime-cinematic-frame",
+      "status": "production-runtime",
+      "path": "runtime/sequences/su-wan-jumpscare.webp",
+      "promptSet": "prompts/011-su-wan-horror-sequence.md"
+    },
+    {
+      "id": "sequence.su-wan-horror.aftermath",
+      "kind": "runtime-cinematic-frame",
+      "status": "production-runtime",
+      "path": "runtime/sequences/su-wan-aftermath.webp",
+      "promptSet": "prompts/011-su-wan-horror-sequence.md"
+    }
+  ]
+}
