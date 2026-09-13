@@ -380,6 +380,55 @@
       "status": "production-runtime",
       "path": "runtime/portraits/lu-ye-workcard.webp",
       "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.su-wan.cutout-sheet",
+      "kind": "dialogue-cutout-sheet",
+      "status": "production-master",
+      "path": "dialogue-su-wan-cutout-sheet_v01.png",
+      "promptSet": "prompts/013-ending-pv-and-cutouts.md"
+    },
+    {
+      "id": "dialogue.zhou-chen.cutout-sheet",
+      "kind": "dialogue-cutout-sheet",
+      "status": "production-master",
+      "path": "dialogue-zhou-chen-cutout-sheet_v01.png",
+      "promptSet": "prompts/013-ending-pv-and-cutouts.md"
+    },
+    {
+      "id": "ending.preserve.pv",
+      "kind": "runtime-ending-pv",
+      "status": "production-runtime",
+      "path": "runtime/endings/preserve.webp",
+      "promptSet": "prompts/013-ending-pv-and-cutouts.md"
+    },
+    {
+      "id": "ending.answer.pv",
+      "kind": "runtime-ending-pv",
+      "status": "production-runtime",
+      "path": "runtime/endings/answer.webp",
+      "promptSet": "prompts/013-ending-pv-and-cutouts.md"
+    },
+    {
+      "id": "ending.erase.pv",
+      "kind": "runtime-ending-pv",
+      "status": "production-runtime",
+      "path": "runtime/endings/erase.webp",
+      "promptSet": "prompts/013-ending-pv-and-cutouts.md"
+    },
+    {
+      "id": "ending.broadcast.pv",
+      "kind": "runtime-ending-pv",
+      "status": "production-runtime",
+      "path": "runtime/endings/broadcast.webp",
+      "promptSet": "prompts/013-ending-pv-and-cutouts.md"
+    },
+    {
+      "id": "ending.follow.pv",
+      "kind": "runtime-ending-pv",
+      "status": "production-runtime",
+      "path": "runtime/endings/follow.webp",
+      "promptSet": "prompts/013-ending-pv-and-cutouts.md"
     }
   ]
 }

@@ -492,6 +492,7 @@ function App() {
                 onOpenEvidence={openEvidence}
                 onChooseEnding={chooseEnding}
                 onReset={resetReview}
+                renderEndingPv
               />
             </div>
           )}

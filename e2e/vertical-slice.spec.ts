@@ -191,8 +191,11 @@ test('requires four observations and a player deduction before CAM-09 unlocks', 
   await expect(desktopRevelation).toContainText('观察评级 A')
   await expect(desktopRevelation).toContainText('第九机位终于也看见了你')
   await page.getByRole('button', { name: /回应未知信号/ }).click()
-  await expect(page.locator('.desktop-revelation .ending-resolution')).toContainText('结局 · 第十秒')
-  await expect(page.locator('.desktop-revelation .ending-resolution')).toContainText('画面中的空椅')
+  const endingPv = page.locator('.ending-pv')
+  await expect(endingPv).toContainText('结局 · 第十秒')
+  await page.getByRole('button', { name: '拉开镜头' }).click()
+  await page.getByRole('button', { name: '确认空椅上的人' }).click()
+  await expect(endingPv).toContainText('画面中的空椅')
 })
 
 test('rewards optional exploration with a third world archive fragment', async ({ page }) => {
