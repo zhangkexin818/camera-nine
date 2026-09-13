@@ -1,4 +1,4 @@
-import { Fingerprint, MapPin, Radio, UserRound, Volume2, VolumeX } from 'lucide-react'
+import { Aperture, Radio, ScanEye, Volume2, VolumeX } from 'lucide-react'
 import { useState } from 'react'
 import type {
   FocusOutcome,
@@ -8,11 +8,61 @@ import type {
   PrologueMemory,
 } from '../game/types'
 import type { AudioCue, AudioMood, AudioStatus } from '../hooks/useGameAudio'
+import { CharacterDialogue, type DialogueLine } from './CharacterDialogue'
 import { CinematicFocusSequence } from './CinematicFocusSequence'
+import { IdentityEvidenceSequence } from './IdentityEvidenceSequence'
 
 const ballroom = new URL('../../art/runtime/cam-01_before.webp', import.meta.url).href
 const hotelExterior = new URL('../../art/runtime/cam-03_static.webp', import.meta.url).href
 const aftermath = new URL('../../art/runtime/sequences/su-wan-aftermath.webp', import.meta.url).href
+
+const ARRIVAL_DIALOGUE: readonly DialogueLine[] = [
+  {
+    speaker: '周辰',
+    channel: '耳机 / 现场导演',
+    text: '路野，八号机保持中景。新娘还有四十秒入场。',
+    portrait: 'zhou-chen-calm',
+    emotion: 'calm',
+  },
+  {
+    speaker: '苏晚',
+    channel: '现场收音 / 未登记',
+    text: '你还记得……那扇没有楼层号码的门吗？',
+    portrait: 'su-wan-warning',
+    emotion: 'warning',
+  },
+  {
+    speaker: '周辰',
+    channel: '耳机 / 信号串入',
+    text: '等等。她没有对着主机位——她在看你。',
+    portrait: 'zhou-chen-confused',
+    emotion: 'warning',
+  },
+]
+
+const BLACKOUT_DIALOGUE: readonly DialogueLine[] = [
+  {
+    speaker: '周辰',
+    channel: '耳机 / 全线丢帧',
+    text: '八路信号同时黑了。路野，你还能看见她吗？',
+    portrait: 'zhou-chen-urgent',
+    emotion: 'afraid',
+  },
+  {
+    speaker: '周辰',
+    channel: '耳机 / 未知回声',
+    text: '不对……监视器里站着的，为什么是七岁的你？',
+    portrait: 'zhou-chen-afraid',
+    emotion: 'afraid',
+  },
+  {
+    speaker: '苏晚',
+    channel: '第九路 / 十二年前',
+    text: '如果你还记得我，就别把这十秒剪进同一条时间。',
+    portrait: 'su-wan-remember',
+    emotion: 'remember',
+  },
+]
 
 interface StoryPrologueProps {
   soundEnabled: boolean
@@ -40,6 +90,7 @@ export function StoryPrologue({
   const [approach, setApproach] = useState<PrologueApproach>('observe')
   const [memory, setMemory] = useState<PrologueMemory>('card')
   const [focus, setFocus] = useState<FocusOutcome>('steady')
+  const [arrivalDialogueComplete, setArrivalDialogueComplete] = useState(false)
 
   const advanceFromTitle = () => {
     onBeginAudio()
@@ -145,64 +196,41 @@ export function StoryPrologue({
       )}
 
       {beat === 1 && (
-        <section className="identity-record">
-          <header>
-            <span>现场身份校验 / 23:38:07</span>
-            <strong>路野，29 岁。婚礼纪录片摄影师。</strong>
-          </header>
-          <div className="identity-facts">
-            <p><UserRound size={15} /><span><b>你是谁</b>今晚婚礼的主摄影，也是十二年前零层事故中唯一留下影像的孩子。</span></p>
-            <p><MapPin size={15} /><span><b>你在哪</b>临海断崖上的白礁酒店。公开建筑没有零层，但电梯每晚会经过一次不存在的停靠。</span></p>
-            <p><Fingerprint size={15} /><span><b>你和苏晚</b>档案说今天是初见；一卷烧坏的家庭录像里，却是她牵着七岁的你走出酒店。</span></p>
-          </div>
-          <blockquote>这里的镜头不会穿越时间。它们只会把“仍有人记得的十秒”覆盖到现在。</blockquote>
-          <div className="story-choices" aria-label="选择路野相信的身份">
-            <button type="button" onClick={() => chooseIdentity('remember')}>
-              <em>相信身体留下的记忆</em><span>苏晚认识我，只是我忘了她。</span>
-            </button>
-            <button type="button" onClick={() => chooseIdentity('record')}>
-              <em>相信没有被烧毁的档案</em><span>先把她当作今晚的拍摄对象。</span>
-            </button>
-          </div>
-        </section>
+        <IdentityEvidenceSequence onCue={onCue} onChoose={chooseIdentity} />
       )}
 
       {beat === 2 && (
-        <section className="story-subtitle-card">
-          <header><span>23:43:12</span><b>宴会厅 · 婚礼直播中</b></header>
-          <p className="story-radio"><i>耳机 / 导演</i>“路野，别乱动镜头。新娘马上宣誓。”</p>
-          <p>苏晚没有走向台前。她穿过整间宴会厅，停在你的镜头正中央。</p>
-          <strong>她在看你。不是在看摄像机。</strong>
-          <div className="story-choices" aria-label="选择路野的行动">
-            <button type="button" onClick={() => chooseApproach('observe')}>
-              <em>保持职业距离</em><span>拉近焦距，继续拍她</span>
-            </button>
-            <button type="button" onClick={() => chooseApproach('intervene')}>
-              <em>相信她在求救</em><span>压下摄影机，追去服务门</span>
-            </button>
-          </div>
+        <section className="story-dialogue-scene">
+          <CharacterDialogue
+            lines={ARRIVAL_DIALOGUE}
+            finalLabel="选择动作"
+            onCue={onCue}
+            onComplete={() => setArrivalDialogueComplete(true)}
+          />
+          {arrivalDialogueComplete && (
+            <div className="visual-action-choice" aria-label="选择路野的动作">
+              <button type="button" onClick={() => chooseApproach('observe')}>
+                <Aperture size={19} aria-hidden="true" /><b>保持拍摄</b><span>锁定她的眼睛</span>
+              </button>
+              <button type="button" onClick={() => chooseApproach('intervene')}>
+                <ScanEye size={19} aria-hidden="true" /><b>放下机器</b><span>追向服务门</span>
+              </button>
+            </div>
+          )}
         </section>
       )}
 
       {beat === 4 && (
-        <section className="story-subtitle-card is-blackout">
-          <header><span>23:47:00</span><b>全酒店断电</b></header>
-          <p className="story-radio"><i>耳机 / 导演</i>“所有机位同时丢帧——路野，你还看得到她吗？”</p>
-          <strong>{focus === 'steady' ? '你看清了她消失的整整一帧。' : '你移开过镜头，母带里因此缺了一帧。'}</strong>
-          <p>
-            十秒后灯重新亮起，苏晚从八台摄影机里同时消失。凌晨，一个没有发件人的地址进入你的相机：<br />
-            <b>“如果你还记得我，就证明这十秒不属于同一条时间。”</b>
-          </p>
-          <button
-            className="story-enter-review"
-            type="button"
-            onClick={() => {
-              onCue('transition')
-              onComplete({ identity, approach, memory, focus })
-            }}
-          >
-            进入封存回放 <i aria-hidden="true">→</i>
-          </button>
+        <section className="story-dialogue-scene is-blackout">
+          <CharacterDialogue
+            lines={BLACKOUT_DIALOGUE}
+            finalLabel="接入封存母带"
+            onCue={onCue}
+            onComplete={() => onComplete({ identity, approach, memory, focus })}
+          />
+          <span className={`focus-memory-mark is-${focus}`} aria-label={focus === 'steady' ? '完整记录消失帧' : '消失帧缺失'}>
+            {focus === 'steady' ? '24 / 24' : '23 / 24'}
+          </span>
         </section>
       )}
 

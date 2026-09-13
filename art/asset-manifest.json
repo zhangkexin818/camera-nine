@@ -303,6 +303,83 @@
       "status": "production-runtime",
       "path": "runtime/sequences/su-wan-aftermath.webp",
       "promptSet": "prompts/011-su-wan-horror-sequence.md"
+    },
+    {
+      "id": "dialogue.su-wan.expression-sheet",
+      "kind": "dialogue-character-sheet",
+      "status": "production-master",
+      "path": "dialogue-su-wan-expression-sheet_v01.png",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.zhou-chen.expression-sheet",
+      "kind": "dialogue-character-sheet",
+      "status": "production-master",
+      "path": "dialogue-zhou-chen-expression-sheet_v01.png",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.su-wan.calm",
+      "kind": "runtime-dialogue-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/su-wan-calm.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.su-wan.warning",
+      "kind": "runtime-dialogue-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/su-wan-warning.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.su-wan.afraid",
+      "kind": "runtime-dialogue-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/su-wan-afraid.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.su-wan.remember",
+      "kind": "runtime-dialogue-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/su-wan-remember.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.zhou-chen.calm",
+      "kind": "runtime-dialogue-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/zhou-chen-calm.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.zhou-chen.confused",
+      "kind": "runtime-dialogue-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/zhou-chen-confused.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.zhou-chen.urgent",
+      "kind": "runtime-dialogue-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/zhou-chen-urgent.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "dialogue.zhou-chen.afraid",
+      "kind": "runtime-dialogue-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/zhou-chen-afraid.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
+    },
+    {
+      "id": "identity.lu-ye.workcard",
+      "kind": "runtime-identity-portrait",
+      "status": "production-runtime",
+      "path": "runtime/portraits/lu-ye-workcard.webp",
+      "promptSet": "prompts/012-dialogue-portrait-expression-sheets.md"
     }
   ]
 }

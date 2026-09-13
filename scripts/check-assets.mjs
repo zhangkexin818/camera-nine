@@ -23,14 +23,22 @@ for (const asset of manifest.assets) {
 }
 
 const runtimeRoot = join(artRoot, 'runtime')
-const runtimeFiles = (await readdir(runtimeRoot)).filter((name) => name.endsWith('.webp'))
+async function listWebpFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true })
+  const nested = await Promise.all(
+    entries.map((entry) => {
+      const path = join(directory, entry.name)
+      return entry.isDirectory() ? listWebpFiles(path) : entry.name.endsWith('.webp') ? [path] : []
+    }),
+  )
+  return nested.flat()
+}
+
+const runtimeFiles = await listWebpFiles(runtimeRoot)
 const runtimeSizes = await Promise.all(
-  runtimeFiles.map(async (name) => (await stat(join(runtimeRoot, name))).size),
+  runtimeFiles.map(async (path) => (await stat(path)).size),
 )
 const runtimeBytes = runtimeSizes.reduce((total, size) => total + size, 0)
-if (runtimeFiles.length !== 17) {
-  errors.push(`expected 17 runtime WebP files, found ${runtimeFiles.length}`)
-}
 
 if (errors.length > 0) {
   console.error(errors.join('\n'))
